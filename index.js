@@ -8,14 +8,7 @@ canvas.height = 720
 //fills in canvas
 c.fillRect(0, 0, canvas.width, canvas.height);
 
-//Function to add images
-function newImage(url, left, bottom){
-    let object = document.createElement("img")
-    object.src = url
-    object.style.position = "fixed"
-    object.style.left = left + "px"
-    object.style.bottom = bottom + "px"
-    document.body.append(object)
-    return object
-}
+//What we are going to be using sprites in order to get characters in the game, Sprites are essentially compilations of 2d images in order to get animations.
+class Sprite {
 
+}
