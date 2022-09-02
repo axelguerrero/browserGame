@@ -35,14 +35,16 @@ nav li {
 } 
 
 body {
-    overflow: hidden;
+    /* makes it so youre only alble to scroll vertically */
+    overflow-x: hidden;
+    overflow-y:auto; 
     background-color: #071b38;
 }
 
 #game {
     position: relative;
-    width: 1280px;
-    height: 720px;
+    width: 1000px;
+    height: 600px;
     border: 1px solid black;
     margin-top: 70px;
     margin-left: 0px; 
@@ -51,18 +53,28 @@ body {
 #plbar {
     background-color: blue;
     width: 100%;
-    height: 40px;
+    height: 20px;
 }
 
  #timer {
     background-color: white;
-    width: 125px;
-    height: 125px;
+    font-family: Silkscreen;
+    width: 75px;
+    height: 75px;
+    /* makes it so that other elements dimensions dont cause this one to shrink */
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 } 
 
 #aibar {
 background-color: red;
-height: 40px;
+height: 20px;
 width: 100%;
+}
+
+/*So our padding and or margin doesnt get effed */
+* {
+    box-sizing: border-box;
 }

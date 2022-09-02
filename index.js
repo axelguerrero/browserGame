@@ -2,8 +2,8 @@
 const canvas = document.querySelector("canvas")
 const c = canvas.getContext("2d")
 //dimensions
-canvas.width = 1280
-canvas.height = 720
+canvas.width = 1000
+canvas.height = 600
 
 //fills in canvas
 c.fillRect(0, 0, canvas.width, canvas.height);
