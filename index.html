@@ -20,18 +20,24 @@
         </ul>
     </nav>
     </div>
+    <!-- Div containing our canvas -->
     <div id="game">
-            <div>
+            <!-- I styled this div like this because it was easier to apply flex to the child elements  -->
+        <div style="
+        position: absolute;
+        align-items: center;
+        display: flex;
+        width: 100%;
+        ">
                 <!-- player healthbar -->
                 <div id="plbar"></div>
                 <!-- timer -->
                 <div id="timer"></div>
                 <!-- ai healthbar -->
                 <div id="aibar"></div>
-            
+        </div>
         <canvas></canvas>
         <script src="./index.js"></script>
-    </div>
     </div>
 </body>
 </html>
