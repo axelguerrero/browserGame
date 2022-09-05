@@ -13,4 +13,3 @@ c.fillRect(0, 0, canvas.width, canvas.height);
 // class  {
 // constructor({position, velocity})
 // }
- 
