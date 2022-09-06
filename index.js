@@ -8,6 +8,17 @@ canvas.height = 600
 //fills in canvas
 c.fillRect(0, 0, canvas.width, canvas.height);
 
+make_base();
+
+function make_base()
+{
+  base_image = new Image();
+  base_image.src = "./images/background.png";
+  base_image.onload = function(){
+    c.drawImage(base_image, 0, 0);
+  }
+}
+
 //to constantly pull our players down
 const gravity = 0.2
 
@@ -76,3 +87,7 @@ function animate() {
 } 
 
 animate()
+
+window.addEventListener("keydown", (event) => {
+    console.log(event.key)
+})
