@@ -1,33 +1,10 @@
-//I spent so much time trying to get this to work that i had deleted my code and this worked
- https://www.encodedna.com/html5/canvas/add-image-to-html5-canvas-using-javascript.htm
-// window.onload = function () {
-//     let img = new Image();
-//     img.src = "./images/background.png"
-
-//     img.onload = function () {
-//         fillCanvas(img);
-//     }
-
-//     function fillCanvas(img) {
-//         const canvas = document.getElementById('canvas');
-//          const ctx = canvas.getContext('2d');
-
-//         canvas.width = img.width;
-//         canvas.height = img.height;
-//          ctx.drawImage(img, 0, 0);
-//     }
-// }
-
-// const img = new Image() {
-//     img.src = "fw"
-// }
-
-var canvas = document.getElementById('canvas');
+const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 ctx.fillRect(0,0, canvas.width, canvas.height)
 
-const gravity = 0.2
+const gravity = 0.7
 
+//fighting platform
 class Platform {
     constructor() {
         this.position = {
@@ -46,8 +23,8 @@ class Platform {
 }
 
 const platform = new Platform()
-platform.draw()
 
+// our characters
 class Fighter {
     constructor({position, velocity}) {
         this.position = position
@@ -62,6 +39,8 @@ class Fighter {
 //updates properties as it change while it moves aronud
 refresh() {
     this.draw()
+
+    this.position.x += this.velocity.x
     this.position.y += this.velocity.y
 
     //stops from falling past 0 level
@@ -102,6 +81,18 @@ function aniloop() {
     ctx.fillRect(0, 0, canvas.width, canvas.height)
     user.refresh()
     ai.refresh()
+    platform.draw()
+
+//prevents our useable chracter from falling throught the platform
+if  (user.position.y + user.height <= platform.position.y &&
+    user.position.y + user.height + user.velocity.y >= platform.position.y) {
+            user.velocity.y = 0
+    }
+
+if  (ai.position.y + ai.height <= platform.position.y &&
+    ai.position.y + ai.height + ai.velocity.y >= platform.position.y) {
+            ai.velocity.y = 0
+    }
 }
 
 aniloop()

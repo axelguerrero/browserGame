@@ -10,3 +10,34 @@ function countdown() {
 
 }
 countdown()
+
+// move on the x axis
+window.addEventListener("keydown", (event) => {
+    switch (event.key) {
+        case"a": 
+             user.velocity.x = -1
+             break
+        case"d": 
+              user.velocity.x = 1
+              break
+        case "w":
+            user.velocity.y = -10
+            break
+    }
+    console.log(event.key)
+})
+// stops you from moving after a button is no longer being pressed down on
+window.addEventListener("keyup", (event) => {
+    switch (event.key) {
+        case"a": 
+            user.velocity.x = 0 
+            break
+        case"d": 
+            user.velocity.x = 0 
+            break
+            case"w":
+            user.velocity.y = 0
+            break
+    }
+    console.log(event.key)
+})
