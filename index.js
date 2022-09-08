@@ -36,7 +36,7 @@ function aniloop() {
     ai.refresh()
     platform.draw()
 
-// user.velocity.x = 0
+user.velocity.x = 0
 // if statement for pressed button to determine direction
 if (keys.a.pressed && lastKey === "a") {
     user.velocity.x = -1
@@ -45,13 +45,11 @@ if (keys.a.pressed && lastKey === "a") {
 }
 
 //prevents our useable chracter from falling through the platform
-    if(user.position.y + user.height <= platform.position.y &&
-        user.position.y + user.height + user.velocity.y >= platform.position.y ) {
+    if(user.position.y + user.height < platform.position.y &&
+        user.position.y + user.height + user.velocity.y >= platform.position.y &&
+        user.position.x >= platform.position.x ) {
         user.velocity.y = 0
     } 
-    if(user.position.x <= platform.position.x - user.width){
-        user.velocity.x = 0
-    }
 
 if  (ai.position.y + ai.height <= platform.position.y &&
     ai.position.y + ai.height + ai.velocity.y >= platform.position.y) {
