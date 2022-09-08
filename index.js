@@ -47,16 +47,17 @@ if (keys.a.pressed && lastKey === "a") {
 //prevents our useable chracter from falling through the platform
     if(user.position.y + user.height < platform.position.y &&
         user.position.y + user.height + user.velocity.y >= platform.position.y &&
-        user.position.x >= platform.position.x ) {
+        user.position.x >= platform.position.x && 
+        user.position.x <= platform.position.y + platform.position.y - platform.position.x + platform.height) {
         user.velocity.y = 0
-    } 
+    }    
 
 if  (ai.position.y + ai.height <= platform.position.y &&
     ai.position.y + ai.height + ai.velocity.y >= platform.position.y) {
             ai.velocity.y = 0
     }
 
-    console.log(user.velocity, user.position)
+    console.log(user.position,platform.position.y)
 }
 
 aniloop()
