@@ -15,7 +15,7 @@ countdown()
 window.addEventListener("keydown", (event) => {
     switch (event.key) {
         case"w":
-            player.velocity.y = -10
+            user.velocity.y = -15
             break
         case"a": 
              keys.a.pressed = true
@@ -34,15 +34,12 @@ window.addEventListener("keyup", (event) => {
     switch (event.key) {
         case"w":
         keys.w.pressed = false
-            lastKey = "w"
             break
             case"a": 
         keys.a.pressed = false
-        lastKey = "a"
             break
         case"d": 
         keys.d.pressed = false
-        lastKey = "d"
             break
         
     }
