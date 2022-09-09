@@ -1,7 +1,8 @@
+/* getting a 8-bit google font into our site */
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
 a {
-    /* text-decoration: none;   */
-     color: inherit; 
+    /* gets color from the from the assigned color value*/
+     color: inherit;  
 }
 
 h1 a {
@@ -13,7 +14,7 @@ nav {
     background-color: #141526;
     height: 50px;
     color: white;
-    margin-top: -15px;
+    margin-top: -10px;
     margin-right: -10px;
     margin-left: -10px;
     padding-top: 5px;
@@ -23,9 +24,9 @@ nav {
 }
 
 nav ul {
-    list-style: none;
+    list-style: none;  /* removes bullet points*/
     text-align: right; 
-    margin-top: -45px;
+    margin-top: -50px;   
 }
 
 nav li {

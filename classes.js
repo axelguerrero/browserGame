@@ -13,7 +13,7 @@ class Background {
     }
 
     refresh() {
-        this.draw()
+        this.draw()  
     }
 }
 
@@ -30,7 +30,7 @@ class Platform {
     }
 
     draw() {
-        ctx.fillStyle = "blue"
+        ctx.fillStyle = "black"
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
 }
@@ -39,27 +39,56 @@ const platform = new Platform()
 
 // our characters
 class Fighter {
-    constructor({position, velocity}) {
+    constructor({position, velocity, color = "blue", offset}) {
         this.position = position
         this.velocity = velocity
+        this.width= 50
         this.height = 150
+        this.hitRadius = {
+            position:  {
+                //moves our hit box with our position
+                x: this.position.x, 
+                y: this.position.y
+            },
+            offset,
+            width: 100,
+            height: 50,
+        }
+        this.color= color
+        this.isAttacking
     }
 
      draw() {
-        ctx.fillStyle = "red"
-        ctx.fillRect(this.position.x, this.position.y, 50, this.height)
-    }
+        ctx.fillStyle = this.color
+        ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
+
+        //hit radius
+        if(this.isAttacking) {
+        ctx.fillStyle ="black"
+        ctx.fillRect(this.hitRadius.position.x, this.hitRadius.position.y, this.hitRadius.width, this.hitRadius.height)
+        }
+}
 //updates properties as it change while it moves aronud
 refresh() {
     this.draw()
+    this.hitRadius.position.x = this.position.x - this.hitRadius.offset.x 
+    this.hitRadius.position.y = this.position.y
 
     this.position.x += this.velocity.x
     this.position.y += this.velocity.y
 
-    //stops from falling past 0 level
+    // allows for our characters fall below the screen
     if (this.position.y + this.height + this.velocity.y >= canvas.height) {        
-        this.velocity.y = 0
+        this.velocity.y = 10
     } else this.velocity.y += gravity
+  }
+//
+  attack() {
+    this.isAttacking = true
+    setTimeout(() => {
+      this.isAttacking = false
+    }, 100)
+
   }
 }
 const user = new Fighter({
@@ -70,6 +99,10 @@ const user = new Fighter({
  velocity: {
     x: 0,
     y: 0
+ },
+ offset: {
+    x: 0,
+    y:0
  }
 })
 
@@ -81,5 +114,10 @@ const ai = new Fighter({
   velocity: {
     x: 0,
     y: 0
-  }
+  },
+  color: "red",
+  offset: {  //turns hands towards the opp
+    x: 50,
+    y: 0
+ }
 })

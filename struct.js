@@ -25,7 +25,9 @@ window.addEventListener("keydown", (event) => {
             keys.d.pressed = true
             lastKey = "d"
               break
-        
+        case " ":
+            user.attack()
+            break
     }
     console.log(event.key)
 })

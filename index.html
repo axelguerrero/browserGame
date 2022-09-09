@@ -7,28 +7,30 @@
 </head>
 <body>
    <div>
+    <!-- navigation bar -->
     <nav>
-        <h1><a href="index.html">FakeGames.com</a></h1>
+        <h1 style="margin-top: 5px;"><a href="index.html">FakeGames.com</a></h1>
         <ul>
-            <!--  -->
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">How to Canvas</a></li>
-            <!--  -->
-            <li><a href=""></a>How to Sprites</a></li>
+            <!-- I WOULD NOT HAVE BEEN ABLE TO DO IT WITH OUT THIS -->
+            <li><a href="https://www.youtube.com/watch?v=vyqbNFMDRGQ&t=2477s" alt="instructional fighting game video">Resource 1</a></li>
+            <!-- Mar -->
+            <li><a href="https://www.youtube.com/watch?v=4q2vvZn5aoo&t=2143s" alt="mario like game instructional video">Resource 2</a></li>
             <!-- Where I got assets for the games  -->
-            <li><a href="https://itch.io/game-assets">Game Assets</a></li>
+            <li><a href="https://anotepad.com/">Pseudocode</a></li>
         </ul>
     </nav>
     </div>
     <!-- Div containing our canvas -->
     <div id="game">
+            <!-- Div within the canvas containing healthbars and timer -->
             <!-- I styled this div like this because it was easier to apply flex to the child elements  -->
         <div style="
         position: absolute;
-        align-items: center;
-        display: flex;
-        width: 100%;
-        padding-top: 2em;
-        padding-left: 6em;
+        align-items: center;       /*lines healthbars with center of timer*/
+        display: flex;              /*displays all our items out in a line */
+        width: 100%;                /*streches elements out to max potential*/
+        padding-top: 2em;             
+        padding-left: 6em;          /*adjusts the actual length of the healthbars */
         padding-right: 6em;
         
         ">
@@ -39,7 +41,9 @@
                 <!-- ai healthbar -->
                 <div id="aibar">Player 2</div>
         </div>
+        <!-- Our canvas and its dimensions -->
         <canvas id="canvas"width="1000px" height="600px"></canvas>
+        <!-- all different js files linked -->
         <script src="./struct.js"></script>
         <script src="./classes.js"></script>
         <script src="./index.js"></script>
