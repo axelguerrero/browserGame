@@ -70,8 +70,20 @@
                             left: 0;">Player 2</div>
             </div>
             </div>
-        <!-- Our canvas and its dimensions -->
+           <!-- setting all of these to 0 lines up our stuff on the center of the canvas -->
+           <!--places it on the canvas -->
+            <div id="display" style="position: absolute;
+            color: white; 
+            align-items: center;
+           justify-content: center;
+           top: 0;
+          right: 0;      
+           bottom: 0;
+           left: 0; 
+           display: none;">Tie</div>  <!--game announcment displaying tie -->
+       <!-- Our canvas and its dimensions --> 
         <canvas id="canvas"width="1000px" height="600px"></canvas>
+        </div>
         <!-- all different js files linked -->
         <script src="./struct.js"></script>
         <script src="./classes.js"></script>

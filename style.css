@@ -1,5 +1,16 @@
 /* getting a 8-bit google font into our site */
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+
+/*So our padding and or margin doesnt get effed */
+* {
+    box-sizing: border-box;
+}
+
+/*So our padding and or margin doesnt get effed */
+* {
+    box-sizing: border-box;
+}
+
 a {
     /* gets color from the from the assigned color value*/
      color: inherit;  
@@ -79,8 +90,8 @@ body {
     /* makes it so that other elements dimensions dont cause this one to shrink */
     flex-shrink: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;    /*aligns on y axis*/
+    justify-content: center; /*aligns on x axis*/
 } 
 
 /* black background for our jp bars */
@@ -103,7 +114,4 @@ bottom: 0;
 left: 0;
 }
 
-/*So our padding and or margin doesnt get effed */
-* {
-    box-sizing: border-box;
-}
+

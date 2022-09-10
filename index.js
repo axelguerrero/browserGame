@@ -92,6 +92,10 @@ if(colliisoin({
         document.getElementById("plbar").style.width = user.health +"%" //subtaracts off of bar
 }
 
+if(user.health <= 0 || ai.health <= 0) { //if statement that says once any fighters health reaches 0 to call determine winner for these two arguments
+    determineWinner({user, ai})
+}
+
 }
 
 aniloop()
