@@ -35,12 +35,41 @@
         
         ">
                 <!-- player healthbar -->
-                <div id="plbar">Player 1</div>
+  <!-- wraps ai bar div--><div style="position: relative;
+                             height: 20px;
+                             width: 100%;
+                             display: flex;
+                             justify-content: flex-end;"> <!--removes health from left to right-->
+                <div id="plbackbar"></div>
+                <div id="plbar"></div>
+                <div style="position: absolute;
+                width: 100%;
+                            font-family: Silkscreen;
+                            color: white;
+                            text-align: start;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;">Player 1</div>
+            </div>
+            
                 <!-- timer -->
                 <div id="timer"></div>
                 <!-- ai healthbar -->
-                <div id="aibar">Player 2</div>
-        </div>
+                <div style="position: relative;
+                             height: 20px;
+                             width: 100%;"> <!-- wraps ai bar div-->
+                <div id="aibackbar"></div>
+                <div id="aibar"></div>
+                <div style="position: absolute;
+                            font-family: Silkscreen;
+                            color: white;
+                            text-align: end;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            left: 0;">Player 2</div>
+            </div>
+            </div>
         <!-- Our canvas and its dimensions -->
         <canvas id="canvas"width="1000px" height="600px"></canvas>
         <!-- all different js files linked -->

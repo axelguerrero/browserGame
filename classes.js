@@ -54,8 +54,9 @@ class Fighter {
             width: 100,
             height: 50,
         }
-        this.color= color
-        this.isAttacking
+        this.color= color //gets color from constructor
+        this.isAttacking  //after click of space bar makes our character hit
+        this.health = 100 //sets hp to 100
     }
 
      draw() {
@@ -116,7 +117,7 @@ const ai = new Fighter({
     y: 0
   },
   color: "red",
-  offset: {  //turns hands towards the opp
+  offset: {  //turns hands towards the oppdd
     x: 50,
     y: 0
  }

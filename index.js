@@ -30,6 +30,7 @@ const keys = {
 
 let lastKey
 
+//when applied to each class of fighter they will become recatanlge one
 function colliisoin({rectangle1, rectangle2}) {
     return (
             rectangle1.hitRadius.position.x + rectangle1.hitRadius.width >= rectangle2.position.x &&
@@ -77,7 +78,8 @@ if (keys.a.pressed && lastKey === "a") {
     }) && user.isAttacking
     ){
             user.isAttacking = false //sets default hit status off
-        console.log("hit")
+            ai.health -= 20 //how much is taken off the bar
+        document.getElementById("aibar").style.width = ai.health + "%" //subtaracts off of bar
     }
 //colliisoin detection for the ai
 if(colliisoin({
@@ -86,7 +88,8 @@ if(colliisoin({
 }) && ai.isAttacking
 ){
         ai.isAttacking = false //sets default hit status off
-    console.log("got hit")
+        user.health -= 20 //how much is taken off the bar
+        document.getElementById("plbar").style.width = user.health +"%" //subtaracts off of bar
 }
 
 }

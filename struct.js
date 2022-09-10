@@ -28,6 +28,9 @@ window.addEventListener("keydown", (event) => {
         case " ":
             user.attack()
             break
+            case "f":
+            ai.attack()
+            break
     }
     console.log(event.key)
 })
