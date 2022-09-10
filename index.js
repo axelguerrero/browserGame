@@ -89,11 +89,23 @@ if(colliisoin({
 ){
         ai.isAttacking = false //sets default hit status off
         user.health -= 20 //how much is taken off the bar
-        document.getElementById("plbar").style.width = user.health +"%" //subtaracts off of bar
+        document.getElementById("plbar").style.width = user.health +"%" //subtaracts off of bar in ammout of percentage
 }
 
 if(user.health <= 0 || ai.health <= 0) { //if statement that says once any fighters health reaches 0 to call determine winner for these two arguments
     determineWinner({user, ai})
+}
+
+//ends game if user falls
+if(user.position.y > canvas.height){
+    user.health -= 100
+    document.getElementById("plbar").style.width = user.health +"%" //subtaracts off of bar in ammout of percentage
+}
+
+//ends game if ai falls
+if(user.position.y > canvas.height){
+    user.health -= 100
+    document.getElementById("plbar").style.width = user.health +"%" //subtaracts off of bar in ammout of percentage
 }
 
 }
