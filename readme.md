@@ -27,6 +27,14 @@ where i got help with platforms
 https://www.youtube.com/watch?v=_MyPLZSGS3s&t=374s
 rectangular collision, helped with hit boxes/radius -->
 
+<!-- Technologies -->
+Canvas API
+DOM API
+HTML DOM API
+UI Events API
+<!-- https://developer.mozilla.org/en-US/docs/Web/API -->
+
+
 <!-- Bugs/incompletion -->
 I wasnt able to get sprites into my game, I really struggled trying to do so and ended up leaving the blocks and just ended up adding more knock back value to make it more fun. 
 
