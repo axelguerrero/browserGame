@@ -38,6 +38,6 @@ UI Events API
 <!-- Bugs/incompletion -->
 I wasnt able to get sprites into my game, I really struggled trying to do so and ended up leaving the blocks and just ended up adding more knock back value to make it more fun. 
 
-The jump could go on for ever if youre on a platform.
+The jump could go on for ever if youre on a platform
 
 Can still move after being killed and can still remove health
