@@ -33,6 +33,8 @@ DOM API
 HTML DOM API
 UI Events API
 <!-- https://developer.mozilla.org/en-US/docs/Web/API -->
+J query
+<!-- get element by id -->
 
 
 <!-- Bugs/incompletion -->
