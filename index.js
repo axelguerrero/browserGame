@@ -99,7 +99,7 @@ if (keys.ArrowLeft.pressed && ai.lastKey === "ArrowLeft") {
             user.isAttacking = false //sets default hit status off
             ai.health -= 10 //how much is taken off the bar
             document.getElementById("aibar").style.width = ai.health + "%" //subtaracts off of bar
-            ai.position.x += 35
+            ai.position.x += 55
     }
 //colliisoin detection for the ai
 if(colliisoin({
@@ -110,7 +110,7 @@ if(colliisoin({
         ai.isAttacking = false //sets default hit status off
         user.health -= 10 //how much is taken off the bar
         document.getElementById("plbar").style.width = user.health + "%" //subtaracts off of bar in ammout of percentage
-        user.position.x -= 35
+        user.position.x -= 55
 }
 
 if(user.health <= 0 || ai.health <= 0) { //if statement that says once any fighters health reaches 0 to call determine winner for these two arguments
