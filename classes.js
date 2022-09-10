@@ -26,7 +26,7 @@ class Platform {
         }
 
         this.width = 500
-        this.height = 50
+        this.height = 40
     }
 
     draw() {
@@ -44,6 +44,7 @@ class Fighter {
         this.velocity = velocity
         this.width= 50
         this.height = 150
+        this.lastKey     //makes it so if multiple keys are pressed, the most recent key wont be interupted ny removal of other keys
         this.hitRadius = {
             position:  {
                 //moves our hit box with our position
@@ -83,15 +84,17 @@ refresh() {
         this.velocity.y = 10
     } else this.velocity.y += gravity
   }
-//
+//function for creating a time space of attack by the flick of a button
   attack() {
     this.isAttacking = true
-    setTimeout(() => {
+    setTimeout(() => {   //sets to false after at the set speed of our time (100ms)
       this.isAttacking = false
     }, 100)
 
   }
 }
+
+//creating usabale character
 const user = new Fighter({
     position: {
     x: 350,

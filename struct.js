@@ -33,20 +33,33 @@ countdown()
 window.addEventListener("keydown", (event) => {
     switch (event.key) {
         case"w":
-            user.velocity.y = -15
+            user.velocity.y = -15  //listens for press of w to remove -15 from current y pos acts as a jump
             break
-        case"a": 
-             keys.a.pressed = true
-             lastKey = "a"
-             break
         case"d": 
             keys.d.pressed = true
-            lastKey = "d"
+            lastKey = "d"           //listens for press of d to make statement true move right
               break
+        case"a": 
+             keys.a.pressed = true
+             lastKey = "a"       //listens for press of a to make statement true move left
+             break
+       
         case " ":
             user.attack()
             break
-            case "f":
+        //ai event listner keys
+        case "ArrowUp":
+            ai.velocity.y = -15  //listens for press of w to remove -15 from current y pos acts as a jump
+            break
+        case "ArrowRight":
+                keys.ArrowRight.pressed = true
+                ai.lastKey = "ArrowRight"
+                break    
+        case "ArrowLeft":
+            keys.ArrowLeft.pressed = true
+            ai.lastKey = "ArrowLeft"
+            break
+        case "f":
             ai.attack()
             break
     }
@@ -63,6 +76,16 @@ window.addEventListener("keyup", (event) => {
             break
         case"d": 
         keys.d.pressed = false
+            break
+// ai key up
+case"ArrowUp":
+        keys.ArrowUp.pressed = false
+            break
+            case"ArrowRight": 
+        keys.ArrowRight.pressed = false
+            break
+        case"ArrowLeft": 
+        keys.ArrowLeft.pressed = false
             break
         
     }

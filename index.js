@@ -25,6 +25,12 @@ const keys = {
     },
     d: {
         pressed: false
+    },
+    ArrowRight: {
+        pressed: false
+    },
+    ArrowLeft: {
+        pressed: false
     }
 }
 
@@ -48,13 +54,26 @@ function aniloop() {
     ai.refresh()
     platform.draw()
 
-user.velocity.x = 0
+
 // movement
+// if statement for pressed button to determine direction and if 2 buttons are clicked and the first button clicked is no longer it wont stop
+
+// movement
+user.velocity.x = 0
+ai.velocity.x = 0
 // if statement for pressed button to determine direction and if 2 buttons are clicked and the first button clicked is no longer it wont stop
 if (keys.a.pressed && lastKey === "a") {
     user.velocity.x = -1
 } else if(keys.d.pressed && lastKey === "d") {
     user.velocity.x = 1
+}
+
+// movement
+// if statement for pressed button to determine direction and if 2 buttons are clicked and the first button clicked is no longer it wont stop
+if (keys.ArrowLeft.pressed && ai.lastKey === "ArrowLeft") {
+    ai.velocity.x = -1
+} else if(keys.ArrowRight.pressed && ai.lastKey === "ArrowRight") {
+    ai.velocity.x = 1
 }
 
 //prevents our useable chracter from falling through the platform until a certain pos is reached
@@ -78,8 +97,9 @@ if (keys.a.pressed && lastKey === "a") {
     }) && user.isAttacking
     ){
             user.isAttacking = false //sets default hit status off
-            ai.health -= 20 //how much is taken off the bar
-        document.getElementById("aibar").style.width = ai.health + "%" //subtaracts off of bar
+            ai.health -= 10 //how much is taken off the bar
+            document.getElementById("aibar").style.width = ai.health + "%" //subtaracts off of bar
+            ai.position.x += 35
     }
 //colliisoin detection for the ai
 if(colliisoin({
@@ -88,8 +108,9 @@ if(colliisoin({
 }) && ai.isAttacking
 ){
         ai.isAttacking = false //sets default hit status off
-        user.health -= 20 //how much is taken off the bar
-        document.getElementById("plbar").style.width = user.health +"%" //subtaracts off of bar in ammout of percentage
+        user.health -= 10 //how much is taken off the bar
+        document.getElementById("plbar").style.width = user.health + "%" //subtaracts off of bar in ammout of percentage
+        user.position.x -= 35
 }
 
 if(user.health <= 0 || ai.health <= 0) { //if statement that says once any fighters health reaches 0 to call determine winner for these two arguments
@@ -99,13 +120,13 @@ if(user.health <= 0 || ai.health <= 0) { //if statement that says once any fight
 //ends game if user falls
 if(user.position.y > canvas.height){
     user.health -= 100
-    document.getElementById("plbar").style.width = user.health +"%" //subtaracts off of bar in ammout of percentage
+    document.getElementById("plbar").style.width = user.health + "%" //subtaracts off of bar in ammout of percentage
 }
 
 //ends game if ai falls
-if(user.position.y > canvas.height){
-    user.health -= 100
-    document.getElementById("plbar").style.width = user.health +"%" //subtaracts off of bar in ammout of percentage
+if(ai.position.y > canvas.height){
+ ai.health -= 100
+    document.getElementById("plbar").style.width = ai.health + "%" //subtaracts off of bar in ammout of percentage
 }
 
 }
